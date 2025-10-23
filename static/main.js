@@ -15,7 +15,7 @@ function getCookie(name) {
   return cookieValue;
 }
 
-
+/*
 function getAllTodos(url) {
   
   fetch(url, {
@@ -37,7 +37,7 @@ function getAllTodos(url) {
         todoList.innerHTML += todoHTMLElement;
     });
   });
-}
+}*/
 
   const operationGetAllTodos = async (url) => {
        r = await fetch(url, {
@@ -64,9 +64,7 @@ function getAllTodos(url) {
 };
 
 
-
-
-function addTodo(url, payload) {
+/*function addTodo(url, payload) {
   fetch(url, {
     method: "POST",
     credentials: "same-origin",
@@ -80,7 +78,7 @@ function addTodo(url, payload) {
   .then(data => {
     console.log(data);
   });
-}
+}*/
 
 const operationAddTodo = async (url, payload) => {
     r = await fetch(url, {
@@ -98,7 +96,7 @@ const operationAddTodo = async (url, payload) => {
 
 }
 
-function updateTodo(url, payload) {
+/*function updateTodo(url, payload) {
   fetch(url, {
     method: "PUT",
     credentials: "same-origin",
@@ -112,7 +110,7 @@ function updateTodo(url, payload) {
   .then(data => {
     console.log(data);
   });
-}
+}*/
 
 const operationUpdateTodo = async (url, payload) => {
     r = await fetch(url, {
@@ -130,7 +128,7 @@ const operationUpdateTodo = async (url, payload) => {
 }
 
 
-function deleteTodo(url) {
+/*function deleteTodo(url) {
   fetch(url, {
     method: "DELETE",
     credentials: "same-origin",
@@ -143,4 +141,18 @@ function deleteTodo(url) {
   .then(data => {
     console.log(data);
   });
+}*/
+
+const operationDeleteTodo = async (url) => {
+    r = await fetch(url, {
+        method: "DELETE",
+        credentials: "same-origin",
+        headers: {
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRFToken": getCookie("csrftoken"),
+        }
+    })
+
+    dt = await r.json();
+    console.log(dt)
 }

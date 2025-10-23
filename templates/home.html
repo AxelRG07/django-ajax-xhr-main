@@ -131,7 +131,7 @@
 
       const todoId = deleteTodoForm.elements["todoIdDelete"].value;
       const singleTodoUrl = `/todos/${todoId}/`;
-      deleteTodo(singleTodoUrl);
+      operationDeleteTodo(singleTodoUrl);
       deleteTodoForm.reset();
     });
 
