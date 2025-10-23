@@ -119,7 +119,7 @@
 
       const todoId = updateTodoForm.elements["todoIdPut"].value;
       const singleTodoUrl = `/todos/${todoId}/`;
-      updateTodo(singleTodoUrl, formData);
+      operationUpdateTodo(singleTodoUrl, formData);
       updateTodoForm.reset();
     });
 

@@ -114,6 +114,21 @@ function updateTodo(url, payload) {
   });
 }
 
+const operationUpdateTodo = async (url, payload) => {
+    r = await fetch(url, {
+        method: "PUT",
+        credentials: "same-origin",
+        headers: {
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRFToken": getCookie("csrftoken"),
+        },
+        body: JSON.stringify({payload: payload})
+    })
+
+    dt = await r.json();
+    console.log(dt)
+}
+
 
 function deleteTodo(url) {
   fetch(url, {
